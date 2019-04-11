@@ -1,3 +1,15 @@
+### Description
+
+Adding user profile:
+
+```
+curl -d '{"name":"value1"}' -H "Accept: application/json" -H "Content-Type: application/json" -X POST http://localhost:8080/user
+```
+Geting user profile:
+
+```
+curl -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://localhost:8080/user/{userId}
+```
 
 ### Run with mysql
 
@@ -13,6 +25,7 @@ spring.jpa.hibernate.ddl-auto=update
 ### Run in docker
 from project folder:
 ```bash
+mvn clean package
 sudo docker build -t usertestapp:latest .
 sudo docker run -d -p 8080:8080 usertestapp
 ```
